@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="./jmobile/jquery.mobile-1.4.5.css" />
+<script src=./jmobile/demos/js/jquery.js></script>
+<script src=./jmobile/jquery.mobile-1.4.5.js></script>
+<script src=jmobile/jquery.mobile-1.4.5.min.js></script>
+<script src=jmobile/jquery.js></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function(){
+  $('.target').on('change', function(){
+  var url = $(this).val();
+  window.location = url;
+  });
+});
+function pangkat() {
+      document.getElementById("hasilpang").value = Math.pow(document.getElementById("a").value,document.getElementById("p").value)
+  };
+  function faktorial() {
+    document.getElementById("hasilfac").value = 1
+    for (i = 1; i <= document.getElementById("fac").value; i++) {
+      document.getElementById("hasilfac").value *= i
+    };
+    };
+    function convert() {
+document.getElementById("warna").style.backgroundColor =
+"rgb("+document.getElementById("red").value+","
++document.getElementById("green").value+","
++document.getElementById("blue").value+")";
+};
+</script>
+</head>
+
+
+<body>
+<div data-role="page" id=win1>
+<div data-role="header">
+<label for="select-choice-0" id="select">What do you want?</label>
+<select name="select-choice-0" class="target">
+<option value="#win1" selected>Kalkulator</option>
+  <option value="#win2">Warna</option>
+  <option value="#win3">Rangkuman</option>
+</select>
+</div>
+
+<div data-role="content">
+<h1>Kalkulator Pangkat</h1>
+    <br>
+    <input type="text" id=a placeholder="masukkan angka">
+    <input type="text" id=p placeholder="masukkan pangkat">
+    <input type="text" id=hasilpang>
+    <button onclick="pangkat()"> HITUNG </button>
+    
+    <h1>Kalkulator Faktorial</h1>
+    <br>
+    <input type="text" id=fac placeholder="masukkan angka">
+    <input type="text" id=hasilfac>
+    <button onclick="faktorial()"> HITUNG </button>
+    </div>
+</div>
+<div data-role="footer">
+<a href=#win2> Go to next page </a>
+</div>
+</div>
+
+<div data-role="page" id=win2>
+<div data-role="header">
+
+  <body>
+<div data-role="page" id=win1>
+
+<div data-role="header">
+<label for="select-choice-0" id="select">Go to :</label>
+<select name="select-choice-0" class="target">
+<option value="#win1" selected>Kalkulator</option>
+  <option value="#win2">Warna</option>
+  <option value="#win3">Rangkuman</option>
+</select>
+</div>
+
+<div data-role="content">
+<h1>Kalkulator Pangkat</h1>
+    <br>
+    <input type="number" id=a placeholder="masukkan angka">
+    <input type="number" id=p placeholder="masukkan pangkat">
+    <input type="number" id=hasilpang>
+    <button onclick="pangkat()"> HITUNG </button>
+    
+    <h1>Kalkulator Faktorial</h1>
+    <br>
+    <input type="number" id=fac placeholder="masukkan angka">
+    <input type="number" id=hasilfac>
+    <button onclick="faktorial()"> HITUNG </button>
+    </div>
+
+    <b>Loader</b>
+       <br>
+       <button class="show-page-loading-msg" data-textonly="false" data-textvisible="false" data-msgtext="" data-inline="true">Icon (default)</button>
+<button class="show-page-loading-msg" data-textonly="false" data-textvisible="true" data-msgtext="" data-inline="true">Icon + text</button>
+<button class="show-page-loading-msg" data-textonly="true" data-textvisible="true" data-msgtext="Text only loader" data-inline="true">Text only</button>
+<button class="hide-page-loading-msg" data-inline="true" data-icon="delete">Hide</button>
+<br>
+<div data-role="footer">
+<a href=#win2> Go to next page </a>
+</div>
+</div>
+
+<div data-role="page" id=win2>
+<div data-role="header">
+<label for="select-choice-0" id="select">Go to :</label>
+<select name="select-choice-0" class="target">
+<option value="#win1">Kalkulator</option>
+  <option value="#win2" selected>Warna</option>
+  <option value="#win3">Rangkuman</option>
+</select>
+</div>
+<div data-role="content">
+<input type="text" id=r placeholder="Input Red Color">
+<input type="text" id=g placeholder="Input Green Color">
+<input type="text" id=b placeholder="Input Blue Color">
+    <button onclick="convert()"> GENERATE </button>
+<textarea id="warna" cols="1000" rows="10"></textarea>
+</div>
+<div data-role="footer">
+<a href=#win1> Go to Homepage </a>
